@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self-Healing Fleet: Predictive Maintenance &amp; MLOps Platform</title>
+    <meta name="description" content="Closed-loop predictive maintenance platform for connected fleets (NASA C-MAPSS turbofan benchmark) featuring sensor streaming, feature engineering, RUL machine learning, rule-based triage work orders, and MLOps retraining." />
+    <meta property="og:title" content="Self-Healing Fleet: Predictive Maintenance &amp; MLOps Platform" />
+    <meta property="og:description" content="Closed-loop predictive maintenance platform for connected fleets (NASA C-MAPSS turbofan benchmark) featuring sensor streaming, feature engineering, RUL machine learning, rule-based triage work orders, and MLOps retraining." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script>
+      // Suppress benign Vite HMR WebSocket connection failure notices in iframe / Cloud Run environment
+      (function() {
+        var isWsError = function(err) {
+          if (!err) return false;
+          var msg = typeof err === 'string' ? err : (err.message || err.reason || String(err));
+          return /websocket/i.test(msg) || /ws.*closed/i.test(msg) || /failed to connect to websocket/i.test(msg);
+        };
+        var origConsoleError = console.error;
+        console.error = function() {
+          var firstArg = arguments[0];
+          if (firstArg && isWsError(firstArg)) {
+            return;
+          }
+          origConsoleError.apply(console, arguments);
+        };
+        window.addEventListener('unhandledrejection', function(event) {
+          if (isWsError(event.reason)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        });
+        window.addEventListener('error', function(event) {
+          if (isWsError(event.error) || isWsError(event.message)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        });
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
